@@ -44,6 +44,28 @@
       <a-entity position="0 1.6 0">
         <a-camera></a-camera>
       </a-entity>
+    <a-torus
+        position="0 2.38 -4.62"
+        rotation="90 0 0"
+        radius="0.36"
+        radius-tubular="0.045"
+        segments-radial="24"
+        segments-tubular="48"
+        color="#111111">
+      </a-torus>
+
+      <!-- Cowl (front cap): a slightly larger black sphere cap in front of the face -->
+      <!-- Using geometry component to slice the sphere (theta/phi) so it looks like a mask plate -->
+      <a-entity
+        position="0 2.38 -4.63"
+        geometry="primitive: sphere; radius: 0.36; thetaStart: 220; thetaLength: 100; phiStart: 70; phiLength: 40"
+        material="color: #111111; metalness: 0.1; roughness: 0.6">
+      </a-entity>
+
+      <!-- Ears: two small black cones on top -->
+      <a-cone position="-0.15 2.72 -5" radius-bottom="0.05" radius-top="0.02" height="0.20" color="#111111"></a-cone>
+      <a-cone position="0.15 2.72 -5"  radius-bottom="0.05" radius-top="0.02" height="0.20" color="#111111"></a-cone>
+
     </a-scene>
   </body>
 </html>
