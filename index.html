@@ -2,70 +2,93 @@
 <html>
   <head>
     <meta charset="utf-8">
-    <title>Snowman Scene</title>
+    <title>Batman Snowman Scene</title>
     <script src="https://aframe.io/releases/1.7.1/aframe.min.js"></script>
+
+    <!-- Add snow particle system -->
+    <script src="https://unpkg.com/aframe-particle-system-component@1.1.3/dist/aframe-particle-system-component.min.js"></script>
   </head>
   <body>
     <a-scene>
+      <!-- Ground -->
       <a-plane position="0 0 -4" rotation="-90 0 0" width="20" height="20" color="#FFFFFF"></a-plane>
 
+      <!-- Sky -->
       <a-sky color="#B0E0E6"></a-sky>
 
-   
+      <!-- Snow (falling) -->
+      <a-entity
+        position="0 5 -5"
+        particle-system="
+          preset: snow;
+          particleCount: 3000;
+          size: 0.06;
+          maxAge: 6;
+          velocityValue: 0 -0.8 0;
+          velocitySpread: 0.2 0.3 0.2;
+          color: #ffffff;
+          opacity: 1;
+          direction: -1;
+          accelerationValue: 0 -0.1 0;
+        ">
+      </a-entity>
+
+      <!-- Snowman body -->
       <a-sphere position="0 0.75 -5" radius="0.75" color="#FFFFFF"></a-sphere>
-
-   
       <a-sphere position="0 1.65 -5" radius="0.55" color="#FFFFFF"></a-sphere>
+      <a-sphere id="head" position="0 2.35 -5" radius="0.35" color="#FFFFFF"></a-sphere>
 
-    
-      <a-sphere position="0 2.35 -5" radius="0.35" color="#FFFFFF"></a-sphere>
+      <!-- Eyes -->
+      <a-sphere position="-0.1 2.43 -4.61" radius="0.05" color="#ffffff"></a-sphere>
+      <a-sphere position="0.1 2.43 -4.61" radius="0.05" color="#ffffff"></a-sphere>
 
-    
-      <a-sphere position="-0.1 2.45 -4.65" radius="0.05" color="#000000"></a-sphere>
-      <a-sphere position="0.1 2.45 -4.65" radius="0.05" color="#000000"></a-sphere>
-
-    
+      <!-- Carrot nose -->
       <a-cone position="0 2.35 -4.6" radius-bottom="0.05" radius-top="0" height="0.25" color="#FFA500" rotation="90 0 0"></a-cone>
 
-  
+      <!-- Buttons -->
       <a-sphere position="0 1.6 -4.6" radius="0.05" color="#000000"></a-sphere>
       <a-sphere position="0 1.4 -4.6" radius="0.05" color="#000000"></a-sphere>
       <a-sphere position="0 1.2 -4.6" radius="0.05" color="#000000"></a-sphere>
 
-      
+      <!-- Tree -->
       <a-cylinder position="-3 0.5 -5" radius="0.1" height="1" color="#8B4513"></a-cylinder>
       <a-cone position="-3 1.3 -5" radius-bottom="0.8" radius-top="0" height="1.5" color="#228B22"></a-cone>
 
-     
+      <!-- Lights -->
       <a-light type="directional" color="#ffffff" intensity="1" position="2 4 3"></a-light>
       <a-light type="ambient" color="#ccccff" intensity="0.5"></a-light>
 
-  
+      <!-- Camera -->
       <a-entity position="0 1.6 0">
         <a-camera></a-camera>
       </a-entity>
-    <a-torus
-        position="0 2.38 -4.62"
-        rotation="90 0 0"
-        radius="0.36"
-        radius-tubular="0.045"
-        segments-radial="24"
-        segments-tubular="48"
-        color="#111111">
-      </a-torus>
 
-      <!-- Cowl (front cap): a slightly larger black sphere cap in front of the face -->
-      <!-- Using geometry component to slice the sphere (theta/phi) so it looks like a mask plate -->
-      <a-entity
+      <!-- ========================= -->
+      <!-- 🦇 BATMAN MASK COMPONENTS 🦇 -->
+      <!-- ========================= -->
+
+      <!-- Eye band (flat mask across eyes) -->
+      <a-box
         position="0 2.38 -4.63"
-        geometry="primitive: sphere; radius: 0.36; thetaStart: 220; thetaLength: 100; phiStart: 70; phiLength: 40"
-        material="color: #111111; metalness: 0.1; roughness: 0.6">
-      </a-entity>
+        width="0.45"
+        height="0.18"
+        depth="0.05"
+        color="#111111">
+      </a-box>
 
-      <!-- Ears: two small black cones on top -->
-      <a-cone position="-0.15 2.72 -5" radius-bottom="0.05" radius-top="0.02" height="0.20" color="#111111"></a-cone>
-      <a-cone position="0.15 2.72 -5"  radius-bottom="0.05" radius-top="0.02" height="0.20" color="#111111"></a-cone>
+      <!-- Forehead plate (top of cowl) -->
+      <a-cylinder
+        position="0 2.46 -4.68"
+        radius="0.37"
+        height="0.05"
+        color="#111111"
+        rotation="90 0 0"
+        material="metalness: 0.1; roughness: 0.6">
+      </a-cylinder>
 
+      <!-- Ears -->
+      <a-cone position="-0.12 2.72 -5" radius-bottom="0.03" radius-top="0.01" height="0.25" color="#111111"></a-cone>
+      <a-cone position="0.12 2.72 -5"  radius-bottom="0.03" radius-top="0.01" height="0.25" color="#111111"></a-cone>
     </a-scene>
   </body>
 </html>
