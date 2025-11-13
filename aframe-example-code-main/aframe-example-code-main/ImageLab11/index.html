@@ -1,15 +1,62 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <script src="https://aframe.io/releases/1.7.1/aframe.min.js"> </script>
+    <script src="https://aframe.io/releases/1.7.1/aframe.min.js"></script>
   </head>
   <body>
     <a-scene>
-      <a-box position="-1 0.5 -3" rotation="0 45 0" color="#4CC3D9"></a-box>
-      <a-sphere position="0 1.25 -5" radius="1.25" color="#EF2D5E"></a-sphere>
-      <a-cylinder position="1 0.75 -3" radius="0.5" height="1.5" color="#FFC65D"></a-cylinder>
-      <a-plane position="0 0 -4" rotation="-90 0 0" width="4" height="4" color="#7BC8A4"></a-plane>
-      <a-sky color="#ECECEC"></a-sky>
-    </a-scene>
+
+      <!-- SUMMER SKY -->
+      <a-sky color="#87CEEB"></a-sky>
+
+      <!-- GRASS GROUND -->
+      <a-plane 
+        position="0 0 -4" 
+        rotation="-90 0 0" 
+        width="20" 
+        height="20" 
+        color="#66BB6A">
+      </a-plane>
+
+      <!-- SUNLIGHT -->
+      <a-entity light="type: directional; intensity: 1" position="2 4 -1"></a-entity>
+      <a-entity light="type: ambient; intensity: 0.5"></a-entity>
+
+      <!-- SIMPLE PLANT #1 -->
+      <a-cylinder position="-1 0 -3" radius="0.05" height="0.4" color="#8B5A2B"></a-cylinder>
+      <a-sphere position="-1 0.3 -3" radius="0.25" color="#2E8B57"></a-sphere>
+
+      <!-- Flowers in Plant #1 -->
+      <a-sphere position="-1 0.38 -3.05" radius="0.05" color="#FF69B4"></a-sphere>
+      <a-sphere position="-0.92 0.33 -3" radius="0.04" color="#FFD700"></a-sphere>
+      <a-sphere position="-1.08 0.34 -2.95" radius="0.045" color="#FF4500"></a-sphere>
+
+      <!-- SIMPLE PLANT #2 -->
+      <a-cylinder position="1 0 -3" radius="0.05" height="0.4" color="#8B5A2B"></a-cylinder>
+      <a-sphere position="1 0.3 -3" radius="0.25" color="#3CB371"></a-sphere>
+
+      <!-- Flowers in Plant #2 -->
+      <a-sphere position="1 0.36 -3.05" radius="0.05" color="#FF69B4"></a-sphere>
+      <a-sphere position="1.08 0.32 -3" radius="0.04" color="#FFD700"></a-sphere>
+      <a-sphere position="0.92 0.34 -2.95" radius="0.045" color="#FF4500"></a-sphere>
+
+      <!-- SMALL TREE -->
+      <a-cylinder position="0 0 -5" radius="0.15" height="1.2" color="#8B4513"></a-cylinder>
+      <a-sphere position="0 1 -5" radius="0.8" color="#228B22"></a-sphere>
+
+      <!-- BEACH UMBRELLA -->
+      <a-cylinder position="2 0 -3" radius="0.05" height="1.5" color="#C0C0C0"></a-cylinder>
+      <a-cone position="2 1.3 -3" radius-bottom="1" radius-top="0.05" height="0.8" color="#FF6347"></a-cone>
+
+      <!-- BEACH TOWEL -->
+     <a-plane
+  position="2 0.01 -2.5"
+  rotation="-90 0 0"
+  width="1.5"
+  height="0.7"
+  color="#FFB6C1"   <!-- Light Pink -->
+  material="opacity: 0.95">
+
+
   </body>
 </html>
