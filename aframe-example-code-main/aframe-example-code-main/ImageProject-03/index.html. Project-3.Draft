@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Soft Dreary Redwood Forest</title>
+    <script src="https://aframe.io/releases/1.7.1/aframe.min.js"></script>
+  </head>
+  <body>
+    <a-scene
+      fog="type: exponential; color: #7FA293; density: 0.018"
+    >
+
+      <!-- SKY -->
+      <a-sky color="#A7C6C1"></a-sky>
+
+      <!-- LIGHTING -->
+      <a-entity light="type: directional; intensity: 0.9; color: #FFF3D4"
+                position="4 12 -5"></a-entity>
+      <a-entity light="type: ambient; intensity: 0.45; color: #DDEBE4"></a-entity>
+
+      <!-- FOREST FLOOR -->
+      <a-plane rotation="-90 0 0"
+               width="50"
+               height="50"
+               color="#5E8368">
+      </a-plane>
+
+      <!-- DIRT PATH -->
+      <a-plane rotation="-90 0 0"
+               position="0 0.02 -10"
+               width="4"
+               height="25"
+               color="#A98156">
+      </a-plane>
+
+      <!-- CAMERA -->
+      <a-entity position="0 1.6 5">
+        <a-camera wasd-controls="acceleration: 18"></a-camera>
+      </a-entity>
+
+
+      <!-- =============================== -->
+      <!--           REDWOOD TREES         -->
+      <!--  (Add canopies above each tree) -->
+      <!-- =============================== -->
+
+      <!-- Tree 1 -->
+      <a-cylinder position="-5 7 -12" radius="0.7" height="14" color="#8E4A2D"></a-cylinder>
+      <a-sphere position="-5 14.5 -12" radius="2.5" color="#4E8B60"></a-sphere>
+
+      <!-- Tree 2 -->
+      <a-cylinder position="3 7 -10" radius="0.7" height="15" color="#8E4A2D"></a-cylinder>
+      <a-sphere position="3 15.5 -10" radius="2.6" color="#4E8B60"></a-sphere>
+
+      <!-- Tree 3 -->
+      <a-cylinder position="-2 7 -15" radius="0.6" height="15" color="#8E4A2D"></a-cylinder>
+      <a-sphere position="-2 15.2 -15" radius="2.3" color="#4E8B60"></a-sphere>
+
+      <!-- Tree 4 -->
+      <a-cylinder position="6 7 -18" radius="0.8" height="16" color="#8E4A2D"></a-cylinder>
+      <a-sphere position="6 16.3 -18" radius="2.8" color="#4E8B60"></a-sphere>
+
+      <!-- Tree 5 -->
+      <a-cylinder position="-6 7 -20" radius="0.8" height="16" color="#8E4A2D"></a-cylinder>
+      <a-sphere position="-6 16.3 -20" radius="2.8" color="#4E8B60"></a-sphere>
+
+
+      <!-- =============================== -->
+      <!--           BUSHES + PLANTS       -->
+      <!-- =============================== -->
+
+      <!-- Existing bushes -->
+      <a-cone position="-1 0.3 -8" radius-bottom="0.5" radius-top="0.05" height="0.7" color="#4E8B60"></a-cone>
+      <a-cone position="2 0.3 -11" radius-bottom="0.5" radius-top="0.05" height="0.7" color="#4E8B60"></a-cone>
+
+      <!-- New bushes cluster near the path -->
+      <a-sphere position="1.5 0.35 -9" radius="0.45" color="#326F48"></a-sphere>
+      <a-sphere position="2.1 0.3 -9.5" radius="0.35" color="#3C7C52"></a-sphere>
+
+      <a-sphere position="-3 0.35 -10" radius="0.45" color="#326F48"></a-sphere>
+      <a-sphere position="-3.6 0.3 -10.5" radius="0.35" color="#3C7C52"></a-sphere>
+
+      <!-- Bush clusters deeper in the forest -->
+      <a-sphere position="4.5 0.35 -14" radius="0.55" color="#326F48"></a-sphere>
+      <a-sphere position="5 0.3 -14.5" radius="0.45" color="#3C7C52"></a-sphere>
+
+      <a-sphere position="-4.5 0.35 -17" radius="0.55" color="#326F48"></a-sphere>
+      <a-sphere position="-5 0.3 -17.5" radius="0.45" color="#3C7C52"></a-sphere>
+
+      <!-- Flowers for warmth -->
+      <a-sphere position="1 0.25 -6" radius="0.15" color="#FFCC88"></a-sphere>
+      <a-sphere position="-2 0.25 -7" radius="0.15" color="#FFADAD"></a-sphere>
+
+    </a-scene>
+  </body>
+</html>
