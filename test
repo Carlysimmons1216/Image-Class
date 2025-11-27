@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Sky Test</title>
+    <script src="https://aframe.io/releases/1.7.1/aframe.min.js"></script>
+  </head>
+  <body>
+    <a-scene>
+      <!-- LOAD YOUR GITHUB IMAGE -->
+      <a-assets>
+        <img id="forestSky"
+             crossorigin="anonymous"
+             src="https://raw.githubusercontent.com/Carlysimmons1216/Image-Class/main/forest_compressed.jpg">
+      </a-assets>
+
+      <!-- USE THE IMAGE AS THE SKY -->
+      <a-sky src="#forestSky" rotation="0 -90 0"></a-sky>
+
+      <!-- SIMPLE CAMERA THAT CAN MOVE / LOOK -->
+      <a-entity position="0 1.6 0">
+        <a-camera
+          wasd-controls="acceleration: 18"
+          look-controls="pointerLockEnabled: true">
+        </a-camera>
+      </a-entity>
+
+      <!-- Just a cube so you see *something* in the scene -->
+      <a-box position="0 0.5 -3" depth="1" height="1" width="1" color="#4CC3D9"></a-box>
+    </a-scene>
+  </body>
+</html>
